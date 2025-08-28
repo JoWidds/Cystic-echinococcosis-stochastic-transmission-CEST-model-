@@ -1,17 +1,4 @@
-setwd ("C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Final Model Simulations")
 rm(list=ls())
-
-# [1] "Final.dog1.csv"      "Final.dog2.csv"      "Final.dog3.csv"      "Final.dog4.csv"      "Final.eggs1.csv"    
-# [6] "Final.eggs2.csv"     "Final.eggs3.csv"     "Final.eggs4.csv"     "Final.lamb1.csv"     "Final.lamb2.csv"    
-# [11] "Final.lamb3.csv"     "Final.lamb4.csv"     "Final.sheep1.csv"    "Final.sheep2.csv"    "Final.sheep3.csv"   
-# [16] "Final.sheep4.csv"    "WHO.Elim.dog1.csv"   "WHO.Elim.dog2.csv"   "WHO.Elim.dog3.csv"   "WHO.Elim.dog4.csv"  
-# [21] "WHO.Elim.sheep1.csv" "WHO.Elim.sheep2.csv" "WHO.Elim.sheep3.csv" "WHO.Elim.sheep4.csv"
-
-svg(file = "C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Final Model Simulations/Figures/Egg.decay.svg",
-    height = 6, width = 11)
-curve(0.11*sin(x/4)+0.01, xlim = c(0,12), bty = 'l', xlab = 'Months September - August', ylab = 'Egg decay') 
-
-dev.off()
 
 #### Importing all files #### 
 #names <- 1:60
@@ -33,12 +20,7 @@ Year <- seq(1,yr, 1)
 plot <- 26#10# 55
 x <- Year[((yr-plot)):yr] ##specify from which year onwards (16 yrs vac onwards) 
 
-#labels <- c("","'10","","","","", "'15","","","","","'20","","","","","'25","","","","","'30", "","","","","'35")
-#labels <- c("'25","","","","","'30", "","","","","'35")
 labels <- seq(from =1960+yr-plot, to = 1960+yr, by =1)
-
-
-
 
 ### Dogs plot ####
 svg(file = "C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Final Model Simulations/Figures/Model.projections.dogs&sheep.svg",
@@ -70,10 +52,6 @@ polygon(c(x, rev(x)),
         c(myfiles[["dog2"]][1,(yr-plot):yr], rev(myfiles[["dog2"]][3,(yr-plot):yr])), 
         col = alpha("#3399FF", 0.30), border = NA) 
 
-# points(x[1], 18.2, col='black', pch=16)
-# points(x[9], 8.2, col='black', pch=16)
-# points(x[12], 4.5, col='black', pch=16)
-
 ### Scenario 3 
 plot(x, myfiles[["dog1"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, 
      #main = "Prevalence in dogs", 
@@ -94,10 +72,6 @@ lines(x, myfiles[["dog3"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, col = 
 polygon(c(x, rev(x)), 
         c(myfiles[["dog3"]][1,(yr-plot):yr], rev(myfiles[["dog3"]][3,(yr-plot):yr])), 
         col = alpha("#CD6839", 0.30), border = NA) 
-
-# points(x[1], 18.2, col='black', pch=16)
-# points(x[9], 8.2, col='black', pch=16)
-# points(x[12], 4.5, col='black', pch=16)
 
 ### Scenario 4 
 plot(x, myfiles[["dog1"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, 
@@ -120,10 +94,6 @@ polygon(c(x, rev(x)),
         c(myfiles[["dog4"]][1,(yr-plot):yr], rev(myfiles[["dog4"]][3,(yr-plot):yr])), 
         col = alpha("#912CEE", 0.2), border = NA) 
 
-# points(x[1], 18.2, col='black', pch=16)
-# points(x[9], 8.2, col='black', pch=16)
-# points(x[12], 4.5, col='black', pch=16)
-
 ### sheep plots ###
 ### Scenario 2 
 plot(x, myfiles[["sheep1"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, 
@@ -145,10 +115,6 @@ polygon(c(x, rev(x)),
         c(myfiles[["sheep2"]][1,(yr-plot):yr], rev(myfiles[["sheep2"]][3,(yr-plot):yr])), 
         col = alpha("#3399FF", 0.30), border = NA) 
 
-# points(x[1], 56.3, col='black', pch=4) ## Necropsy prev 
-# points(x[7], 21.1, col='black', pch=4)
-
-
 ### Scenario 3 
 plot(x, myfiles[["sheep1"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, 
      xlab = "Timeline  (years) ", ylab = "Prevalence %", 
@@ -168,9 +134,6 @@ polygon(c(x, rev(x)),
         c(myfiles[["sheep3"]][1,(yr-plot):yr], rev(myfiles[["sheep3"]][3,(yr-plot):yr])), 
         col = alpha("#CD6839", 0.30), border = NA) 
 
-# points(x[1], 56.3, col='black', pch=4) ## Necropsy prev 
-# points(x[7], 21.1, col='black', pch=4)
-
 ### Scenario 4 
 plot(x, myfiles[["sheep1"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, 
      xlab = "Timeline  (years) ", ylab = "Prevalence %", 
@@ -189,9 +152,6 @@ lines(x, myfiles[["sheep4"]][2,(yr-plot):yr], type = "l", lty = 1, lwd=1.7, col 
 polygon(c(x, rev(x)), 
         c(myfiles[["sheep4"]][1,(yr-plot):yr], rev(myfiles[["sheep4"]][3,(yr-plot):yr])), 
         col = alpha("#912CEE", 0.2), border = NA) 
-
-# points(x[1], 56.3, col='black', pch=4) ## Necropsy prev 
-# points(x[7], 21.1, col='black', pch=4)
 
 dev.off() 
 
@@ -226,11 +186,6 @@ nth_columns_prospective <- nth_columns[sapply(nth_columns, function(x) !is.null(
 plot <- 10 #26#10# 55
 x <- Year[((yr-plot)):yr] 
 labels <- seq(from =1960+yr-plot, to = 1960+yr, by =1)
-# plot(1:75, myfiles$eggs1[2,], type = "l")
-# lines(1:75, myfiles$eggs2[2,], type = "l", col = "#3399FF")
-# lines(1:75, myfiles$eggs3[2,], type = "l", col = "#CD6839")
-# lines(1:75, myfiles$eggs4[2,], type = "l", col = "#912CEE")
-
 
 ###Median egg proportion (scenario/counterfactual)
 Egg.S2 <- as.numeric(myfiles$eggs2[2,(yr-plot):yr] / myfiles$eggs1[2,(yr-plot):yr]) 
@@ -435,4 +390,5 @@ legend("topright", legend=c("CF Scenario", "LF Scenario", "HF Scenario", "IC Sce
 
 
 dev.off() 
+
 
