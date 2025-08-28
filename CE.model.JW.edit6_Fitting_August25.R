@@ -3,7 +3,6 @@
 ## Target prev 4.5 and 56.3 in dogs and sheep respectively (2009) following 29 years of PZQ application, prior to EG95 vac.  
 # As per Mujica et. al 2021 ## Fitted to adult sheep prev (>2 years old)  
 rm(list=ls())  
-setwd ("C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Fitting")
 
 library(rstudioapi)
 source('C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Model.fitting.R') 
@@ -183,11 +182,6 @@ Final.prev <- data.frame(
   Final.P.sheep
 )
 
-# Final.P.Lambs <- sapply(Lamb.prev, function(x) mean(tail(x, 12)))
-# Final.P.sheep <- sapply(All.Sheep.prev, function(x) mean(tail(x, 12)))
-# Final.P.dogs <- sapply(Dog.prev, function(x) mean(tail(x, 12)))
-# 
-# Final.prev <- data.frame(dog_beta_vec, sheep_beta_vec, Final.P.dogs, Final.P.Lambs, Final.P.sheep) ##final prev of dogs, lambs, sheep
 colnames(Final.prev)<- c('dog_beta_vec', 'sheep_beta_vec', 'prevD','prevL', 'prevS')
 summary(Final.prev)
 
@@ -207,3 +201,4 @@ source("C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - ec
 run_ABC_fit(fit)
 
 }
+
