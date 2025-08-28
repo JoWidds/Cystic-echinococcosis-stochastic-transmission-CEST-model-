@@ -5,7 +5,6 @@
 # Fitted with 20 year burn in, 29 years PZQ only. Introduction of the EG95 vaccine in the Rio Negro control programme during 2009-2025)
 ### All new intervention packages run from 2025 onwards.
 
-setwd ("C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Final Model Simulations")
 rm(list=ls())
 source('C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Model.fitting.R') 
 FinalPars <- read.csv('C:/Users/jw0104/OneDrive - University of Surrey/Documents/Argentina - echino/Modelling/Fitting/ParticleSim6.csv')#Posteriors 
@@ -279,5 +278,6 @@ colnames(reaches.elim.s) <- c(20,10,0)
 my.list <- list(Final.lamb = df.lamb, Final.sheep= df.sheep, Final.dog = df.dog, Final.eggs = df.eggs, WHO.Elim.dog = reaches.elim.d, WHO.Elim.sheep = reaches.elim.s)
 #mapply(write.csv, my.list, file = paste0(names(my.list), vf,".", wf, '.csv'), row.names = F)
 mapply(write.csv, my.list, file = paste0(names(my.list),scenario,'.csv'), row.names = F)
+
 
 ## See Figures.model.R for graphs
