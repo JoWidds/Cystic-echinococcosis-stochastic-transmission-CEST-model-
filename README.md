@@ -2,4 +2,4 @@ Cystic echinococcosis stochastic transmission model code - written by J.Widdicom
 
 Fitting files - CE.model.JW.edit6_Fitting_August25, run_ABC_fit                                                      
 Model files - CE.model.JW.edit7, Model.fitting, ParticleSim6 (Posterior values generated from fitting)                                             
-Image generation files - Figures.model, Images_Fitting_August25
+Image generation code files- Figures.model, Images_Fitting_August25, (results data flies - Final.dog, Final.lamb, Final.sheep, Final.eggs, WHO.elim)  
